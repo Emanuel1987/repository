@@ -1,0 +1,117 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: openldap
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: openldap
+  template:
+    metadata:
+      labels:
+        app: openldap
+    spec:
+      hostname: ldap-svc
+      imagePullSecrets: []
+      containers:
+        - image: "osixia/openldap:1.3.0"
+          imagePullPolicy: IfNotPresent
+          name: openldap
+          ports:
+            - containerPort: 389
+          args:
+            - --copy-service
+          env:
+          - name: LDAP_TLS
+            valueFrom:
+              configMapKeyRef:
+                name: openldap-bootstrap-config
+                key: LDAP_TLS
+          - name: LDAP_ADMIN_PASSWORD
+            valueFrom:
+              configMapKeyRef:
+                name: openldap-bootstrap-config
+                key: LDAP_ADMIN_PASSWORD
+          - name: LDAP_DOMAIN
+            valueFrom:
+              configMapKeyRef:
+                name: openldap-bootstrap-config
+                key: LDAP_DOMAIN
+          - name: LDAP_REMOVE_CONFIG_AFTER_SETUP
+            valueFrom:
+              configMapKeyRef:
+                name: openldap-bootstrap-config
+                key: LDAP_REMOVE_CONFIG_AFTER_SETUP
+          - name: DISABLE_CHOWN
+            valueFrom:
+              configMapKeyRef:
+                name: openldap-bootstrap-config
+                key: DISABLE_CHOWN
+          volumeMounts:
+          - name: openldap-pv
+            mountPath: "/container/service/slapd/assets/config/bootstrap/ldif/custom"
+      affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - preference:
+              matchExpressions:
+              - key: workload.sas.com/class
+                operator: In
+                values:
+                - stateless
+            weight: 100
+          - preference:
+              matchExpressions:
+              - key: workload.sas.com/class
+                operator: NotIn
+                values:
+                - compute
+                - cas
+                - stateful
+                - connect
+            weight: 50
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: kubernetes.azure.com/mode
+                operator: NotIn
+                values:
+                - system
+      tolerations:
+      - effect: NoSchedule
+        key: workload.sas.com/class
+        operator: Equal
+        value: stateful
+      - effect: NoSchedule
+        key: workload.sas.com/class
+        operator: Equal
+        value: stateless
+      volumes:
+      - name: openldap-pv
+        persistentVolumeClaim:
+          claimName: openldap-pvc
+      - name: bootstrap-custom
+        emptyDir: {}
+      - name: ldap-bootstrap-config
+        configMap:
+          name: openldap-bootstrap-config
+          items:
+          - key: LDAP_USERS_CONF
+            path: 07-testUsers.ldif
+            mode: 0777
+          - key: LDAP_GROUPS_CONF
+            path: 06-testGroups.ldif
+            mode: 0777
+      initContainers:
+      - name: ldap-init
+        image: "osixia/openldap:1.3.0"
+        command:
+          - bash
+          - -c
+          - "cp -avRL /tmp/ldif/custom/* /container/service/slapd/assets/config/bootstrap/ldif/custom/ && chmod -R 755 /container/service/slapd/assets/config/bootstrap/ldif/custom/"
+        volumeMounts:
+          - name: openldap-pv
+            mountPath: "/container/service/slapd/assets/config/bootstrap/ldif/custom"
+          - name: ldap-bootstrap-config
+            mountPath: "/tmp/ldif/custom"
