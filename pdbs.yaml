@@ -1,7 +1,7 @@
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: viya4-pdb
+  name: sas-office-addin-app-pdb
   namespace: viya4
 spec:
   minAvailable: 1
@@ -12,7 +12,7 @@ spec:
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: viya4-pdb
+  name: sas-preferences-pdb
   namespace: viya4
 spec:
   minAvailable: 1
@@ -23,10 +23,10 @@ spec:
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: viya4-pdb
+  name: sas-rabbitmq-server-pdb
   namespace: viya4
 spec:
-  minAvailable: 1
+  minAvailable: 2
   selector:
     matchLabels:
       app: sas-rabbitmq-server
@@ -34,7 +34,7 @@ spec:
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: viya4-pdb
+  name: sas-reference-data-pdb
   namespace: viya4
 spec:
   minAvailable: 1
@@ -45,7 +45,7 @@ spec:
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: viya4-pdb
+  name: sas-report-alerts-pdb
   namespace: viya4
 spec:
   minAvailable: 1
@@ -56,7 +56,7 @@ spec:
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: viya4-pdb
+  name: sas-report-distribution-pdb
   namespace: viya4
 spec:
   minAvailable: 1
@@ -67,7 +67,7 @@ spec:
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: viya4-pdb
+  name: sas-report-execution-pdb
   namespace: viya4
 spec:
   minAvailable: 1
@@ -78,7 +78,7 @@ spec:
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: viya4-pdb
+  name: sas-report-renderers-pdb
   namespace: viya4
 spec:
   minAvailable: 1
@@ -89,7 +89,7 @@ spec:
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: viya4-pdb
+  name: sas-report-services-group-pdb
   namespace: viya4
 spec:
   minAvailable: 1
@@ -100,7 +100,7 @@ spec:
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: viya4-pdb
+  name: sas-risk-cirrus-app-pdb
   namespace: viya4
 spec:
   minAvailable: 1
@@ -111,7 +111,7 @@ spec:
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: viya4-pdb
+  name: sas-risk-cirrus-objects-pdb
   namespace: viya4
 spec:
   minAvailable: 1
@@ -122,7 +122,7 @@ spec:
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: viya4-pdb
+  name: sas-risk-data-pdb
   namespace: viya4
 spec:
   minAvailable: 1
@@ -133,7 +133,7 @@ spec:
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: viya4-pdb
+  name: sas-risk-modeling-app-pdb
   namespace: viya4
 spec:
   minAvailable: 1
@@ -144,7 +144,7 @@ spec:
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: viya4-pdb
+  name: sas-risk-modeling-core-pdb
   namespace: viya4
 spec:
   minAvailable: 1
@@ -155,7 +155,7 @@ spec:
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: viya4-pdb
+  name: sas-scheduler-pdb
   namespace: viya4
 spec:
   minAvailable: 1
@@ -166,7 +166,7 @@ spec:
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: viya4-pdb
+  name: sas-score-definitions-pdb
   namespace: viya4
 spec:
   minAvailable: 1
@@ -177,7 +177,7 @@ spec:
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: viya4-pdb
+  name: sas-score-execution-pdb
   namespace: viya4
 spec:
   minAvailable: 1
@@ -188,7 +188,7 @@ spec:
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: viya4-pdb
+  name: sas-search-pdb
   namespace: viya4
 spec:
   minAvailable: 1
@@ -199,7 +199,7 @@ spec:
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: viya4-pdb
+  name: sas-studio-pdb
   namespace: viya4
 spec:
   minAvailable: 1
@@ -210,7 +210,7 @@ spec:
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: viya4-pdb
+  name: sas-studio-development-pdb
   namespace: viya4
 spec:
   minAvailable: 1
@@ -221,7 +221,7 @@ spec:
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: viya4-pdb
+  name: sas-text-analytics-data-pdb
   namespace: viya4
 spec:
   minAvailable: 1
@@ -232,7 +232,7 @@ spec:
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: viya4-pdb
+  name: sas-text-analytics-taxonomies-pdb
   namespace: viya4
 spec:
   minAvailable: 1
@@ -243,7 +243,7 @@ spec:
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: viya4-pdb
+  name: sas-theme-designer-app-pdb
   namespace: viya4
 spec:
   minAvailable: 1
@@ -254,7 +254,7 @@ spec:
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: viya4-pdb
+  name: sas-transfer-pdb
   namespace: viya4
 spec:
   minAvailable: 1
@@ -265,7 +265,7 @@ spec:
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: viya4-pdb
+  name: sas-transformations-pdb
   namespace: viya4
 spec:
   minAvailable: 1
@@ -276,7 +276,7 @@ spec:
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: viya4-pdb
+  name: sas-visual-analytics-pdb
   namespace: viya4
 spec:
   minAvailable: 1
@@ -287,7 +287,7 @@ spec:
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: viya4-pdb
+  name: sas-visual-analytics-app-pdb
   namespace: viya4
 spec:
   minAvailable: 1
@@ -298,54 +298,10 @@ spec:
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: viya4-pdb
+  name: sas-web-assets-pdb
   namespace: viya4
 spec:
   minAvailable: 1
   selector:
     matchLabels:
       app: sas-web-assets
----
-apiVersion: policy/v1
-kind: PodDisruptionBudget
-metadata:
-  name: viya4-pdb
-  namespace: viya4
-spec:
-  minAvailable: 1
-  selector:
-    matchLabels:
-      app: sas-workflow-engine
----
-apiVersion: policy/v1
-kind: PodDisruptionBudget
-metadata:
-  name: viya4-pdb
-  namespace: viya4
-spec:
-  minAvailable: 1
-  selector:
-    matchLabels:
-      app: sas-workflow-history
----
-apiVersion: policy/v1
-kind: PodDisruptionBudget
-metadata:
-  name: viya4-pdb
-  namespace: viya4
-spec:
-  minAvailable: 1
-  selector:
-    matchLabels:
-      app: sas-workflow-manager-app
----
-apiVersion: policy/v1
-kind: PodDisruptionBudget
-metadata:
-  name: viya4-pdb
-  namespace: viya4
-spec:
-  minAvailable: 1
-  selector:
-    matchLabels:
-      app: sas-workload-orchestrator
