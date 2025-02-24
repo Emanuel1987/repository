@@ -1,288 +1,324 @@
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: sas-connect-pdb
+  name: sas-feature-flags-pdb
   namespace: viya4
 spec:
   minAvailable: 1
   selector:
     matchLabels:
-      app: sas-connect
+      app: sas-feature-flags
 
 ---
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: sas-connect-server-pdb
+  name: sas-file-store-pdb
   namespace: viya4
 spec:
   minAvailable: 1
   selector:
     matchLabels:
-      app: sas-connect-server
+      app: sas-file-store
 
 ---
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: sas-connect-spawner-pdb
+  name: sas-files-pdb
   namespace: viya4
 spec:
   minAvailable: 1
   selector:
     matchLabels:
-      app: sas-connect-spawner
+      app: sas-files
 
 ---
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: sas-consul-server-pdb
+  name: sas-formats-pdb
   namespace: viya4
 spec:
   minAvailable: 1
   selector:
     matchLabels:
-      app: sas-consul-server
+      app: sas-formats
 
 ---
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: sas-content-pdb
+  name: sas-geography-pdb
   namespace: viya4
 spec:
   minAvailable: 1
   selector:
     matchLabels:
-      app: sas-content
+      app: sas-geography
 
 ---
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: sas-credentials-pdb
+  name: sas-graph-builder-app-pdb
   namespace: viya4
 spec:
   minAvailable: 1
   selector:
     matchLabels:
-      app: sas-credentials
+      app: sas-graph-builder-app
 
 ---
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: sas-data-agent-server-colocated-pdb
+  name: sas-graph-templates-pdb
   namespace: viya4
 spec:
   minAvailable: 1
   selector:
     matchLabels:
-      app: sas-data-agent-server-colocated
+      app: sas-graph-templates
 
 ---
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: sas-data-agent-services-pdb
+  name: sas-identities-pdb
   namespace: viya4
 spec:
   minAvailable: 1
   selector:
     matchLabels:
-      app: sas-data-agent-services
+      app: sas-identities
 
 ---
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: sas-data-explorer-app-pdb
+  name: sas-information-catalog-app-pdb
   namespace: viya4
 spec:
   minAvailable: 1
   selector:
     matchLabels:
-      app: sas-data-explorer-app
+      app: sas-information-catalog-app
 
 ---
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: sas-data-flows-pdb
+  name: sas-insights-pdb
   namespace: viya4
 spec:
   minAvailable: 1
   selector:
     matchLabels:
-      app: sas-data-flows
+      app: sas-insights
 
 ---
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: sas-data-mining-models-pdb
+  name: sas-job-execution-pdb
   namespace: viya4
 spec:
   minAvailable: 1
   selector:
     matchLabels:
-      app: sas-data-mining-models
+      app: sas-job-execution
 
 ---
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: sas-data-mining-project-resources-pdb
+  name: sas-job-execution-app-pdb
   namespace: viya4
 spec:
   minAvailable: 1
   selector:
     matchLabels:
-      app: sas-data-mining-project-resources
+      app: sas-job-execution-app
 
 ---
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: sas-data-mining-results-pdb
+  name: sas-job-flow-scheduling-pdb
   namespace: viya4
 spec:
   minAvailable: 1
   selector:
     matchLabels:
-      app: sas-data-mining-results
+      app: sas-job-flow-scheduling
 
 ---
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: sas-data-mining-risk-models-pdb
+  name: sas-landing-app-pdb
   namespace: viya4
 spec:
   minAvailable: 1
   selector:
     matchLabels:
-      app: sas-data-mining-risk-models
+      app: sas-landing-app
 
 ---
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: sas-data-plans-pdb
+  name: sas-launcher-pdb
   namespace: viya4
 spec:
   minAvailable: 1
   selector:
     matchLabels:
-      app: sas-data-plans
+      app: sas-launcher
 
 ---
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: sas-data-quality-services-pdb
+  name: sas-launcher-job-pdb
   namespace: viya4
 spec:
   minAvailable: 1
   selector:
     matchLabels:
-      app: sas-data-quality-services
+      app: sas-launcher-job
 
 ---
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: sas-data-sources-pdb
+  name: sas-lineage-app-pdb
   namespace: viya4
 spec:
   minAvailable: 1
   selector:
     matchLabels:
-      app: sas-data-sources
+      app: sas-lineage-app
 
 ---
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: sas-data-studio-app-pdb
+  name: sas-localization-pdb
   namespace: viya4
 spec:
   minAvailable: 1
   selector:
     matchLabels:
-      app: sas-data-studio-app
+      app: sas-localization
 
 ---
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: sas-decisions-runtime-builder-pdb
+  name: sas-logon-app-pdb
   namespace: viya4
 spec:
   minAvailable: 1
   selector:
     matchLabels:
-      app: sas-decisions-runtime-builder
+      app: sas-logon-app
 
 ---
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: sas-deployment-data-pdb
+  name: sas-microanalytic-score-pdb
   namespace: viya4
 spec:
   minAvailable: 1
   selector:
     matchLabels:
-      app: sas-deployment-data
+      app: sas-microanalytic-score
 
 ---
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: sas-device-management-pdb
+  name: sas-ml-pipeline-automation-pdb
   namespace: viya4
 spec:
   minAvailable: 1
   selector:
     matchLabels:
-      app: sas-device-management
+      app: sas-ml-pipeline-automation
 
 ---
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: sas-discovery-services-pdb
+  name: sas-model-management-pdb
   namespace: viya4
 spec:
   minAvailable: 1
   selector:
     matchLabels:
-      app: sas-discovery-services
+      app: sas-model-management
 
 ---
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: sas-drive-app-pdb
+  name: sas-model-manager-app-pdb
   namespace: viya4
 spec:
   minAvailable: 1
   selector:
     matchLabels:
-      app: sas-drive-app
+      app: sas-model-manager-app
 
 ---
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: sas-environment-manager-app-pdb
+  name: sas-model-publish-pdb
   namespace: viya4
 spec:
   minAvailable: 1
   selector:
     matchLabels:
-      app: sas-environment-manager-app
+      app: sas-model-publish
 
-# Adicione o restante dos pods da mesma forma
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: sas-model-repository-pdb
+  namespace: viya4
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: sas-model-repository
+
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: sas-model-studio-app-pdb
+  namespace: viya4
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: sas-model-studio-app
+
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: sas-natural-language-generation-pdb
+  namespace: viya4
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: sas-natural-language-generation
+
+# Continuar com os próximos pods...
