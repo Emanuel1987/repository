@@ -1,307 +1,43 @@
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: sas-office-addin-app-pdb
+  name: sas-workflow-engine-pdb
   namespace: viya4
 spec:
   minAvailable: 1
   selector:
     matchLabels:
-      app: sas-office-addin-app
+      app: sas-workflow-engine
 ---
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: sas-preferences-pdb
+  name: sas-workflow-history-pdb
   namespace: viya4
 spec:
   minAvailable: 1
   selector:
     matchLabels:
-      app: sas-preferences
+      app: sas-workflow-history
 ---
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: sas-rabbitmq-server-pdb
-  namespace: viya4
-spec:
-  minAvailable: 2
-  selector:
-    matchLabels:
-      app: sas-rabbitmq-server
----
-apiVersion: policy/v1
-kind: PodDisruptionBudget
-metadata:
-  name: sas-reference-data-pdb
+  name: sas-workflow-manager-app-pdb
   namespace: viya4
 spec:
   minAvailable: 1
   selector:
     matchLabels:
-      app: sas-reference-data
+      app: sas-workflow-manager-app
 ---
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
-  name: sas-report-alerts-pdb
+  name: sas-workload-orchestrator-pdb
   namespace: viya4
 spec:
   minAvailable: 1
   selector:
     matchLabels:
-      app: sas-report-alerts
----
-apiVersion: policy/v1
-kind: PodDisruptionBudget
-metadata:
-  name: sas-report-distribution-pdb
-  namespace: viya4
-spec:
-  minAvailable: 1
-  selector:
-    matchLabels:
-      app: sas-report-distribution
----
-apiVersion: policy/v1
-kind: PodDisruptionBudget
-metadata:
-  name: sas-report-execution-pdb
-  namespace: viya4
-spec:
-  minAvailable: 1
-  selector:
-    matchLabels:
-      app: sas-report-execution
----
-apiVersion: policy/v1
-kind: PodDisruptionBudget
-metadata:
-  name: sas-report-renderers-pdb
-  namespace: viya4
-spec:
-  minAvailable: 1
-  selector:
-    matchLabels:
-      app: sas-report-renderers
----
-apiVersion: policy/v1
-kind: PodDisruptionBudget
-metadata:
-  name: sas-report-services-group-pdb
-  namespace: viya4
-spec:
-  minAvailable: 1
-  selector:
-    matchLabels:
-      app: sas-report-services-group
----
-apiVersion: policy/v1
-kind: PodDisruptionBudget
-metadata:
-  name: sas-risk-cirrus-app-pdb
-  namespace: viya4
-spec:
-  minAvailable: 1
-  selector:
-    matchLabels:
-      app: sas-risk-cirrus-app
----
-apiVersion: policy/v1
-kind: PodDisruptionBudget
-metadata:
-  name: sas-risk-cirrus-objects-pdb
-  namespace: viya4
-spec:
-  minAvailable: 1
-  selector:
-    matchLabels:
-      app: sas-risk-cirrus-objects
----
-apiVersion: policy/v1
-kind: PodDisruptionBudget
-metadata:
-  name: sas-risk-data-pdb
-  namespace: viya4
-spec:
-  minAvailable: 1
-  selector:
-    matchLabels:
-      app: sas-risk-data
----
-apiVersion: policy/v1
-kind: PodDisruptionBudget
-metadata:
-  name: sas-risk-modeling-app-pdb
-  namespace: viya4
-spec:
-  minAvailable: 1
-  selector:
-    matchLabels:
-      app: sas-risk-modeling-app
----
-apiVersion: policy/v1
-kind: PodDisruptionBudget
-metadata:
-  name: sas-risk-modeling-core-pdb
-  namespace: viya4
-spec:
-  minAvailable: 1
-  selector:
-    matchLabels:
-      app: sas-risk-modeling-core
----
-apiVersion: policy/v1
-kind: PodDisruptionBudget
-metadata:
-  name: sas-scheduler-pdb
-  namespace: viya4
-spec:
-  minAvailable: 1
-  selector:
-    matchLabels:
-      app: sas-scheduler
----
-apiVersion: policy/v1
-kind: PodDisruptionBudget
-metadata:
-  name: sas-score-definitions-pdb
-  namespace: viya4
-spec:
-  minAvailable: 1
-  selector:
-    matchLabels:
-      app: sas-score-definitions
----
-apiVersion: policy/v1
-kind: PodDisruptionBudget
-metadata:
-  name: sas-score-execution-pdb
-  namespace: viya4
-spec:
-  minAvailable: 1
-  selector:
-    matchLabels:
-      app: sas-score-execution
----
-apiVersion: policy/v1
-kind: PodDisruptionBudget
-metadata:
-  name: sas-search-pdb
-  namespace: viya4
-spec:
-  minAvailable: 1
-  selector:
-    matchLabels:
-      app: sas-search
----
-apiVersion: policy/v1
-kind: PodDisruptionBudget
-metadata:
-  name: sas-studio-pdb
-  namespace: viya4
-spec:
-  minAvailable: 1
-  selector:
-    matchLabels:
-      app: sas-studio
----
-apiVersion: policy/v1
-kind: PodDisruptionBudget
-metadata:
-  name: sas-studio-development-pdb
-  namespace: viya4
-spec:
-  minAvailable: 1
-  selector:
-    matchLabels:
-      app: sas-studio-development
----
-apiVersion: policy/v1
-kind: PodDisruptionBudget
-metadata:
-  name: sas-text-analytics-data-pdb
-  namespace: viya4
-spec:
-  minAvailable: 1
-  selector:
-    matchLabels:
-      app: sas-text-analytics-data
----
-apiVersion: policy/v1
-kind: PodDisruptionBudget
-metadata:
-  name: sas-text-analytics-taxonomies-pdb
-  namespace: viya4
-spec:
-  minAvailable: 1
-  selector:
-    matchLabels:
-      app: sas-text-analytics-taxonomies
----
-apiVersion: policy/v1
-kind: PodDisruptionBudget
-metadata:
-  name: sas-theme-designer-app-pdb
-  namespace: viya4
-spec:
-  minAvailable: 1
-  selector:
-    matchLabels:
-      app: sas-theme-designer-app
----
-apiVersion: policy/v1
-kind: PodDisruptionBudget
-metadata:
-  name: sas-transfer-pdb
-  namespace: viya4
-spec:
-  minAvailable: 1
-  selector:
-    matchLabels:
-      app: sas-transfer
----
-apiVersion: policy/v1
-kind: PodDisruptionBudget
-metadata:
-  name: sas-transformations-pdb
-  namespace: viya4
-spec:
-  minAvailable: 1
-  selector:
-    matchLabels:
-      app: sas-transformations
----
-apiVersion: policy/v1
-kind: PodDisruptionBudget
-metadata:
-  name: sas-visual-analytics-pdb
-  namespace: viya4
-spec:
-  minAvailable: 1
-  selector:
-    matchLabels:
-      app: sas-visual-analytics
----
-apiVersion: policy/v1
-kind: PodDisruptionBudget
-metadata:
-  name: sas-visual-analytics-app-pdb
-  namespace: viya4
-spec:
-  minAvailable: 1
-  selector:
-    matchLabels:
-      app: sas-visual-analytics-app
----
-apiVersion: policy/v1
-kind: PodDisruptionBudget
-metadata:
-  name: sas-web-assets-pdb
-  namespace: viya4
-spec:
-  minAvailable: 1
-  selector:
-    matchLabels:
-      app: sas-web-assets
+      app: sas-workload-orchestrator
