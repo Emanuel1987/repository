@@ -1,0 +1,228 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: sas-analytics-events-pdb
+  namespace: viya4
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: sas-analytics-events
+
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: sas-analytics-execution-pdb
+  namespace: viya4
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: sas-analytics-execution
+
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: sas-analytics-gateway-pdb
+  namespace: viya4
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: sas-analytics-gateway
+
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: sas-analytics-resources-pdb
+  namespace: viya4
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: sas-analytics-resources
+
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: sas-annotations-pdb
+  namespace: viya4
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: sas-annotations
+
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: sas-app-registry-pdb
+  namespace: viya4
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: sas-app-registry
+
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: sas-arke-pdb
+  namespace: viya4
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: sas-arke
+
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: sas-audit-pdb
+  namespace: viya4
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: sas-audit
+
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: sas-authorization-pdb
+  namespace: viya4
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: sas-authorization
+
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: sas-batch-pdb
+  namespace: viya4
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: sas-batch
+
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: sas-batch-job-pdb
+  namespace: viya4
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: sas-batch-job
+
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: sas-cas-batch-job-pdb
+  namespace: viya4
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: sas-cas-batch-job
+
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: sas-cas-control-pdb
+  namespace: viya4
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: sas-cas-control
+
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: sas-catalog-services-pdb
+  namespace: viya4
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: sas-catalog-services
+
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: sas-code-debugger-app-pdb
+  namespace: viya4
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: sas-code-debugger-app
+
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: sas-collaboration-pdb
+  namespace: viya4
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: sas-collaboration
+
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: sas-compute-pdb
+  namespace: viya4
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: sas-compute
+
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: sas-compute-job-pdb
+  namespace: viya4
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: sas-compute-job
+
+---
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: sas-configuration-pdb
+  namespace: viya4
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: sas-configuration
+
+# Adicione os outros pods conforme o mesmo padrão
